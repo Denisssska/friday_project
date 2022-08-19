@@ -1,0 +1,30 @@
+.cards {
+    width: 80%;
+    margin:3% auto;
+}
+
+.cardsContainer {
+    /*width: 80%;*/
+    /*margin:3% auto;*/
+}
+
+.cardsTitle {
+    margin-top: 10px;
+    margin-bottom: 27px;
+    font-weight: 600;
+}
+
+.searchContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 49px;
+}
+
+.search {
+    /*padding: 2%;*/
+    width: 100%;
+    opacity: 0.5;
+    font-size: 15px;
+    letter-spacing: 0.3em;
+}

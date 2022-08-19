@@ -1,0 +1,60 @@
+.registration {
+    height: 100vh;
+}
+
+.registrationPaper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 350px;
+    /*margin-top: 7%;*/
+    margin:7% auto 0 auto;
+}
+
+@media all and (max-width: 730px) {
+    .registrationPaper {
+        height: 100%;
+
+    }
+}
+
+.registrationPaperContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.registerH1 {
+    display: flex;
+    margin-top: 10%;
+    font-size: 26px;
+}
+
+.form {
+    width: 85%;
+    display: block;
+    align-items: center;
+}
+
+.registerFooter {
+    color: gray;
+    margin-top: 31px;
+}
+
+.registerImg {
+    width: 180px;
+}
+
+.registerName {
+    font-weight: 400;
+    opacity: 0.5;
+}
+
+.photo {
+    opacity: 0.5;
+    margin-left: 5px;
+    align-self: center;
+}

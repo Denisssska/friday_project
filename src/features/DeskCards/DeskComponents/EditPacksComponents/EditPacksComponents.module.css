@@ -1,0 +1,17 @@
+.modalName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.modalText {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.modalButtons {
+    display: flex;
+    justify-content: space-between;
+}

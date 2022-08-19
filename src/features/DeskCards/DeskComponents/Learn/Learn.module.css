@@ -1,0 +1,49 @@
+.registration {
+    width: 60%;
+    margin: 7% auto;
+}
+
+.registrationButton {
+    margin-top: 2%;
+    margin-left: 2%;
+    color: #212121;
+}
+
+.registrationCardName {
+    text-align: center;
+}
+
+.registerRadio {
+    display: flex;
+    flex-direction: column;
+}
+.registrationPaper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 300px;
+    width: 400px;
+    height: 80%;
+    margin: 0 auto;
+}
+
+.registrationPaperContainer {
+    background-color: #f9f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.registerH1 {
+    display: flex;
+    margin-top: 30px;
+    font-size: 26px;
+}
+
+.registerName {
+    font-weight: 400;
+    opacity: 0.5;
+}
+

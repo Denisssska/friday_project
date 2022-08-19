@@ -1,0 +1,18 @@
+.mainStyle {
+    padding: 2%;
+    width: 100%;
+    opacity: 0.5;
+    font-size: 15px;
+    letter-spacing: 0.3em;
+}
+@media all and (max-width: 1220px) {
+    .mainStyle {
+    width:50%;
+    }
+}
+@media all and (max-width: 730px) {
+    .mainStyle {
+        letter-spacing: .1em;
+        margin-top: 3%;
+    }
+}
