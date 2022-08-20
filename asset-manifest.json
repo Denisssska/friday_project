@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/friday_project/static/css/main.acb29709.css",
+    "main.js": "/friday_project/static/js/main.76f8c5b7.js",
+    "static/js/787.7136d4b4.chunk.js": "/friday_project/static/js/787.7136d4b4.chunk.js",
+    "static/media/apeTest.jpg": "/friday_project/static/media/apeTest.5888cdc28556f454a508.jpg",
+    "static/media/preloader.gif": "/friday_project/static/media/preloader.926c86d6aa4b226eca5d.gif",
+    "static/media/icons8-становая-тяга.gif": "/friday_project/static/media/icons8-становая-тяга.af3a599d8f4f420b8786.gif",
+    "static/media/oldCar.svg": "/friday_project/static/media/oldCar.3ceded8c2573f386a341fa06b7f5b27e.svg",
+    "static/media/newLogo.png": "/friday_project/static/media/newLogo.7256ab6d703e46cd1231.png",
+    "static/media/404Page.png": "/friday_project/static/media/404Page.2d47255f361c6cf188c4.png",
+    "index.html": "/friday_project/index.html",
+    "static/media/edit.svg": "/friday_project/static/media/edit.49f75adc8d73036c195b94b2348700d4.svg",
+    "static/media/pen.svg": "/friday_project/static/media/pen.49f75adc8d73036c195b94b2348700d4.svg",
+    "static/media/defaultImg.svg": "/friday_project/static/media/defaultImg.a4630df255e0ae6515935f09558f5899.svg",
+    "static/media/delete.svg": "/friday_project/static/media/delete.cb3c1341729e15767930aec1d004a2ac.svg",
+    "static/media/school.svg": "/friday_project/static/media/school.16121f080e440ae13c1be8b19ef4f7b5.svg",
+    "static/media/arrowBack.svg": "/friday_project/static/media/arrowBack.7c7a9944521e8fe65c4520d2289cceb2.svg",
+    "main.acb29709.css.map": "/friday_project/static/css/main.acb29709.css.map",
+    "main.76f8c5b7.js.map": "/friday_project/static/js/main.76f8c5b7.js.map",
+    "787.7136d4b4.chunk.js.map": "/friday_project/static/js/787.7136d4b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.acb29709.css",
+    "static/js/main.76f8c5b7.js"
+  ]
+}
