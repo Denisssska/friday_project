@@ -7,7 +7,6 @@ import style from '../EditPacksComponents.module.css';
 import {updatePackTC} from "../../../packsReducer/packsReducer";
 import {FileInput} from "../../../../../common/components/FileInput/FileInput";
 
-
 type UpdatePackPropsType = {
     packId: string
     packName: string
