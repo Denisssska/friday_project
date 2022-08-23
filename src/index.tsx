@@ -12,12 +12,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     // <BrowserRouter>
-    <HashRouter>
+     <HashRouter>
         <Provider store={store}>
             <App/>
         </Provider>
-    </HashRouter>
-    // </BrowserRouter>
+     </HashRouter>
+     // </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
