@@ -45,8 +45,6 @@ export const BasicTableBody = () => {
                                     {state: {packName: pack.name, user_Id: pack.user_id}}
                                 )}
                                 sx={{borderBottom: '1px solid #1c72b9', padding: '0'}}
-                                // component="th"
-                                // scope="row"
                                 align="center"
                                 width='16.6%'
                             >

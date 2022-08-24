@@ -1,62 +1,62 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import {useAppDispatch} from '../../utils/hooks';
 import TableSortLabel from '@mui/material/TableSortLabel';
 
 type SortCellPropsType = {
     name: string
-    action: any
+    actionCreater: any
     sortType: string
-    dirValue: boolean | undefined
 }
 
 export const SortCell: React.FC<SortCellPropsType> = ({
                                                           name,
-                                                          action,
+                                                          actionCreater,
                                                           sortType,
-                                                          dirValue
-}) => {
+                                                      }) => {
+
     const dispatch = useAppDispatch();
 
-    const onSendSortValue = (name: string) => {
-        if (name === 'Cards' && dirValue) {
-            dispatch(action({[sortType]: '1cardsCount', dirValue: false}));
+    const [value, setValue] = useState(true)
+    const [value2, setValue2] = useState(true)
+
+    const onSendSortValue = useCallback((name: string) => {
+
+        if (name === 'Cards') {
+            value && dispatch(actionCreater({[sortType]: '1cardsCount'}))
+            !value && dispatch(actionCreater({[sortType]: '0cardsCount'}))
+            setValue(!value)
         }
-        if (name === 'Cards' && !dirValue) {
-            dispatch(action({[sortType]: '0cardsCount', dirValue: true}));
+        if (name === 'Last Update' || name === 'Last Cards Updated') {
+            value2 && dispatch(actionCreater({[sortType]: '1updated'}));
+            !value2 && dispatch(actionCreater({[sortType]: '0updated'}));
+            setValue2(!value2)
         }
-        if (name === 'Last Update' && dirValue) {
-            dispatch(action({[sortType]: '1updated', dirValue: false}));
+
+        if (name === 'Grade') {
+            value && dispatch(actionCreater({[sortType]: '1grade'}));
+            !value && dispatch(actionCreater({[sortType]: '0grade'}));
+            setValue(!value)
         }
-        if (name === 'Last Update' && !dirValue) {
-            dispatch(action({[sortType]: '0updated', dirValue: true}));
-        }
-        if (name === 'Last Cards Updated' && dirValue) {
-            dispatch(action({[sortType]: '1updated', dirValue: false}));
-        }
-        if (name === 'Last Cards Updated' && !dirValue) {
-            dispatch(action({[sortType]: '0updated', dirValue: true}));
-        }
-        if (name === 'Grade' && dirValue) {
-            dispatch(action({[sortType]: '1grade', dirValue: false}));
-        }
-        if (name === 'Grade' && !dirValue) {
-            dispatch(action({[sortType]: '0grade', dirValue: true}));
-        }
-    };
+
+    }, [actionCreater, dispatch, sortType, value, value2]);
 
     return (
         <>
-            {
-                   name === 'Cards'
-                || name === 'Last Update'
-                || name === 'Last Cards Updated'
-                || name === 'Grade'
-                ? <TableSortLabel
+            {name === 'Cards' || name === 'Grade' ?
+                <TableSortLabel
+                    active={true}
                     onClick={() => onSendSortValue(name)}
                     style={{color: 'white'}}
-                    direction={dirValue ? 'desc' : 'asc'}
-                >{name}</TableSortLabel>
-                : <>{name}</>}
+                    direction={value ? 'desc' : 'asc'}
+                >{name}</TableSortLabel> :
+                name === 'Last Update' || name === 'Last Cards Updated' ?
+                    <TableSortLabel
+                        active={true}
+                        onClick={() => onSendSortValue(name)}
+                        style={{color: 'white'}}
+                        direction={value2 ? 'desc' : 'asc'}
+                    >{name}</TableSortLabel> :
+                    <>{name}</>}
         </>
     )
 }
