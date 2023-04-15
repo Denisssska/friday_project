@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Paper, TextField} from '@mui/material';
+import {Button, FormControl, Paper, TextField} from '@mui/material';
 import {Link} from 'react-router-dom';
 import {SubmitHandler, useForm} from 'react-hook-form';
 import {useAppDispatch, useAppSelector} from '../../common/utils/hooks';
@@ -35,11 +35,11 @@ export const ForgotPasswordPage = React.memo ( () => {
 
     return (
         <div className={style.registration}>
-            <Paper className={style.registrationPaper} elevation={2} style={{height: '350px'}}>
+            <Paper className={style.registrationPaper} elevation={2}>
                 <div className={style.registrationPaperContainer}>
                     <h1 className={style.registerH1}>Forgot your password?</h1>
-
                     <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
+                        <FormControl sx={{ display:'block', width: 300}} variant="standard">
                         <TextField fullWidth label="Email"
                                    id="fullWidth"
                                    variant="standard"
@@ -53,26 +53,29 @@ export const ForgotPasswordPage = React.memo ( () => {
                                        }
                                    })}
                         />
+                        </FormControl>
                         {errors?.email && <span style={{color: 'red'}}>{errors.email.message}</span>}
 
                         <Button variant="contained"
                                 type='submit'
                                 sx={{
+                                    display:'block',
                                     width: 300,
-                                    marginTop: 5,
+                                    margin: "15% auto 5%",
                                     borderRadius: 5,
-                                    marginLeft: 3,
+
                                 }}
                         >
                             Send
                         </Button>
                     </form>
 
-                    <span style={{color: 'gray', marginTop: 30, fontWeight: 'bold'}}>Did you remember your password?</span>
+                    <h5 style={{textAlign:'center', color: 'gray', marginTop: 30, fontWeight: 'bold'}}>Did you remember your password?</h5>
                     <Link style={{
-                        color: 'blue', marginTop: 10,
+                        display:'block',
+                        color: 'blue',
                         backgroundColor: "transparent",
-                        boxShadow: "none"
+                        boxShadow: "none",textAlign:'center',marginBottom:'5%'
                     }} to="/">
                         Try logging in
                     </Link>

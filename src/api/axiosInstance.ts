@@ -6,7 +6,3 @@ export const instance = axios.create({
 
     baseURL: process.env.REACT_APP_BACK_URL || 'https://neko-back.herokuapp.com/2.0/'
 });
-// export const instance2 = axios.create({
-//     withCredentials:true,baseURL:'https://dry-forest-56016.herokuapp.com/'
-// }
-// )

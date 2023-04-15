@@ -50,14 +50,10 @@ export const Login = React.memo(() => {
 
     return (
         <div className={style.registration}>
-            <Paper
-                className={style.registrationPaper}
-                elevation={2}
-            >
+            <Paper className={style.registrationPaper} elevation={2}>
                 <div className={style.registrationPaperContainer}>
                     <h1 className={style.registerH1}>Sign in</h1>
-
-                    <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
 
                         <TextField
                             sx={{display: 'block'}}
@@ -102,11 +98,16 @@ export const Login = React.memo(() => {
                                           label='Remember me'
                         />
 
-                        <div style={{fontSize: '12px', marginBottom: '25px', paddingLeft: '143px'}}>
-                            <NavLink to={'/changePassword'}>
-                                Forgot Password?
-                            </NavLink>
-                        </div>
+
+                        <NavLink style={{
+                            display: 'block',
+                            color: 'blue',
+                            backgroundColor: "transparent",
+                            boxShadow: "none", textAlign: 'center', marginBottom: '5%'
+                        }} to={'/changePassword'}>
+                            Forgot Password?
+                        </NavLink>
+
 
                         <Button
                             type='submit'
@@ -124,13 +125,14 @@ export const Login = React.memo(() => {
 
                     </form>
 
-                    <div style={{color: 'gray', marginTop: 30, fontWeight: 'bold'}}>Don't have an account?</div>
+                    <h5 style={{textAlign: 'center', color: 'gray', marginTop: 30, fontWeight: 'bold'}}>Don't have an
+                        account?</h5>
 
                     <NavLink style={{
-                        color: 'blue', marginTop: 10,
+                        display: 'block',
+                        color: 'blue',
                         backgroundColor: "transparent",
-                        boxShadow: "none",
-                        marginBottom: '3%'
+                        boxShadow: "none", textAlign: 'center', marginBottom: '5%'
                     }} to={'/registration'}>
                         Sign Up
                     </NavLink>

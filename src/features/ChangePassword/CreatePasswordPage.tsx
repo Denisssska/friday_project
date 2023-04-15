@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../auth/Registration/Registration.module.css';
-import {Button, FormControl, InputLabel, Paper, Input} from '@mui/material';
+import {Button, FormControl, Input, InputLabel, Paper} from '@mui/material';
 import {useAppDispatch, useAppSelector} from '../../common/utils/hooks';
 import {SubmitHandler, useForm} from 'react-hook-form';
 import {Navigate, useLocation} from 'react-router-dom';
@@ -12,7 +12,7 @@ type PasswordField = {
     password: string
 }
 
-export const CreatePasswordPage = React.memo ( () => {
+export const CreatePasswordPage = React.memo(() => {
     const dispatch = useAppDispatch();
     const location = useLocation();
 
@@ -21,7 +21,10 @@ export const CreatePasswordPage = React.memo ( () => {
     const token = location.pathname.split('/')[2];
 
     //функции для показа/скрытия пароля
-    interface State {showPassword: boolean;}
+    interface State {
+        showPassword: boolean;
+    }
+
     const [values, setValues] = React.useState<State>({
         showPassword: false,
     });
@@ -45,19 +48,20 @@ export const CreatePasswordPage = React.memo ( () => {
 
     return (
         <div className={style.registration}>
-            <Paper className={style.registrationPaper} elevation={2} style={{height: '350px'}}>
+            <Paper className={style.registrationPaper} elevation={2}>
                 <div className={style.registrationPaperContainer}>
                     <h1 className={style.registerH1}>Create new password</h1>
-
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <FormControl sx={{m: 1, width: 340}} variant="standard">
-                            <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                        <FormControl sx={{display: 'block', width: 300}} variant="standard">
+                            <InputLabel
+                                htmlFor="standard-adornment-password">Password</InputLabel>
                             <Input
+                                sx={{textAlign: 'center'}}
                                 {...register('password',
                                     {
                                         required: 'Password is required!',
                                         minLength: {
-                                            value: 7, message: 'Password should be min 7 symbols'
+                                            value: 9, message: 'Password should be min 9 symbols'
                                         },
                                     })}
                                 fullWidth
@@ -72,21 +76,23 @@ export const CreatePasswordPage = React.memo ( () => {
                         <Button variant="contained"
                                 type='submit'
                                 sx={{
+                                    display: 'block',
                                     width: 300,
-                                    marginTop: 5,
+                                    margin: "15% auto 5%",
                                     borderRadius: 5,
-                                    marginLeft: 3,
+
                                 }}
                         >Create new password
                         </Button>
 
-                        <div style={{color: 'gray', marginTop: 30, fontWeight: 'bold'}}>We will send you further
+                        <h5 style={{textAlign: 'center', color: 'gray', marginTop: 30, fontWeight: 'bold'}}>We will send
+                            you further
                             instructions to email
-                        </div>
+                        </h5>
 
                     </form>
                 </div>
             </Paper>
         </div>
     );
-} );
+});

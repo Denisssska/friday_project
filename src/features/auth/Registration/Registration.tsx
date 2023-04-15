@@ -40,27 +40,28 @@ export const Registration = React.memo(() => {
     }
     return (
         <div className={style.registration}>
-            <Paper  className={style.registrationPaper} elevation={2}>
+            <Paper className={style.registrationPaper} elevation={2}>
                 <div className={style.registrationPaperContainer}>
                     <h1 className={style.registerH1}>Sign Up</h1>
-
-                    <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
-                        <TextField sx={{display: 'block'}} fullWidth label="Email"
-                                   variant="standard"
-                                   margin="normal"
-                                   type='text'
-                                   autoComplete='username'
-                                   {...register('email', {
-                                       required: 'Email is required!',
-                                       pattern: {
-                                           value: /^(([^<>()[\],;:\s@]+(\.[^<>()[\],;:\s@]+)*)|(.+))@(([^<>()[\],;:\s@]+\.)+[^<>()[\],;:\s@]{2,})$/i,
-                                           message: 'Enter valid email'
-                                       }
-                                   })}
-                        />
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <FormControl sx={{display: 'block', width: 300}} variant="standard">
+                            <TextField fullWidth label="Email"
+                                       variant="standard"
+                                       margin="normal"
+                                       type='text'
+                                       autoComplete='username'
+                                       {...register('email', {
+                                           required: 'Email is required!',
+                                           pattern: {
+                                               value: /^(([^<>()[\],;:\s@]+(\.[^<>()[\],;:\s@]+)*)|(.+))@(([^<>()[\],;:\s@]+\.)+[^<>()[\],;:\s@]{2,})$/i,
+                                               message: 'Enter valid email'
+                                           }
+                                       })}
+                            />
+                        </FormControl>
                         {errors?.email && <span style={{color: 'red'}}>{errors.email.message}</span>}
 
-                        <FormControl sx={{width: '100%'}} variant="standard">
+                        <FormControl sx={{display: 'block', width: 300}} variant="standard">
                             <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                             <Input
                                 {...register('password',
@@ -78,14 +79,14 @@ export const Registration = React.memo(() => {
                         </FormControl>
                         {errors?.password && <span style={{color: 'red'}}>{errors.password.message}</span>}
 
-                        <FormControl sx={{width: '100%', marginTop: '3%'}} variant="standard">
+                        <FormControl sx={{display: 'block', width: 300}} variant="standard">
                             <InputLabel htmlFor="standard-adornment-password">Confirm password</InputLabel>
                             <Input
                                 {...register("confirmPassword",
                                     {
                                         required: "Your passwords do no match",
                                         minLength: {
-                                            value: 7, message: 'Password should be min 7 symbols'
+                                            value: 9, message: 'Password should be min 9 symbols'
                                         },
                                         validate: (val: string) => {
                                             if (watch('password') !== val) {
@@ -106,23 +107,21 @@ export const Registration = React.memo(() => {
                                 type='submit'
                                 sx={{
                                     display: 'block',
-                                    width: '90%',
-                                    margin: '15% auto 3% auto',
-                                    borderRadius: 5
+                                    width: 300,
+                                    margin: "15% auto 5%",
+                                    borderRadius: 5,
                                 }}
                         >
                             Sign Up
                         </Button>
-
                     </form>
-
-                    <span style={{color: 'gray', marginTop: 30, fontWeight: 'bold'}}>Already have an account?</span>
-
+                    <h5 style={{textAlign: 'center', color: 'gray', marginTop: 30, fontWeight: 'bold'}}>Already have an
+                        account?</h5>
                     <Link style={{
-                        color: 'blue', marginTop: 10,
+                        display: 'block',
+                        color: 'blue',
                         backgroundColor: "transparent",
-                        boxShadow: "none",
-                        marginBottom:'3%'
+                        boxShadow: "none", textAlign: 'center', marginBottom: '5%'
                     }} to="/">
                         Sign In
                     </Link>
